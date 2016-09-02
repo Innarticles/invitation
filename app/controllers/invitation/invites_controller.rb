@@ -124,7 +124,7 @@ class Invitation::InvitesController < ApplicationController
 
   # Use deliver_later from rails 4.2+ if available.
   def deliver_email(mail)
-    if mail.respond_to?(:deliver_later)
+    if mail.respond_to?(:deliver_now)
       mail.deliver_later
     else
       mail.deliver
