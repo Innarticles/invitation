@@ -45,11 +45,21 @@ module Invitation
     # @return [Boolean]
     attr_accessor :routes
 
+
+    # Url for redirects after the invites has been sent
+    #
+    # Defaults to: '/'
+    #
+    #
+    # @return [String]
+    attr_accessor :user_registration_url
+
     def initialize
       @user_model = ::User
       @user_registration_url = ->(params) { Rails.application.routes.url_helpers.sign_up_url(params) }
       @mailer_sender = 'reply@example.com'
       @routes = true
+      @url_after_invite = '/'
     end
 
     def user_model_class_name
