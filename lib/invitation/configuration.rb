@@ -52,7 +52,7 @@ module Invitation
     #
     #
     # @return [String]
-    attr_accessor :user_registration_url
+    attr_accessor :url_after_invite
 
     def initialize
       @user_model = ::User
